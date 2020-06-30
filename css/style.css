@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .clearfix::after {
@@ -12,13 +15,24 @@
 
 /* some var */
 :root {
+    /* larghezza aside big screen */
     --aside-big-wd: 140px;
-    /*aside big width*/
+    /* larghezza aside small screen */
     --aside-small-wd: 50px;
-    /*aside small width*/
+    /* numero dischi riga large screen */
+    --lg-row-item-number: 6;
+    /* numero dischi riga medium screen */
+    --md-row-item-number: 4;
+    /* numero dischi riga small screen */
+    --sm-row-item-number: 2;
 }
 
+
+
+
+
 /* section define */
+/* sezione di sinistra */
 aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
@@ -26,8 +40,10 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
 }
-
+/************************/
+/* sezione alta */
 header {
     height: 70px;
     width: calc(100vw - var(--aside-big-wd));
@@ -35,31 +51,34 @@ header {
     position: fixed;
     top: 0;
     left: var(--aside-big-wd);
-    f
+    z-index: 1000;
 }
-
+/************************/
+/* sezione bassa */
 section.player {
     height: 70px;
     width: 100vw;
     background-color: red;
     position: fixed;
     bottom: 0;
+    z-index: 1000;
 }
-
+/************************/
+/* sezione centrale */
 section.central {
-    /* height: 100vh; */
     margin: 70px 0;
     margin-left: var(--aside-big-wd);
     color: white;
-    background-color: black;
-}
+    background-color: #333;
 
+}
+/************************/
 /* central .selector */
 .selector {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: blue;
+    max-width: 50%;
+    margin: 0px auto 20px;
+    padding: 20px 10px;
+    /* background-color: blue; */
 }
 
 .selector ul {
@@ -73,72 +92,142 @@ section.central {
     display: block;
     color: white;
     text-decoration: none;
-    margin: 5px 10px;
+    padding: 5px;
     text-transform: capitalize;
+    font-size: 14px;
+    opacity: 0.5;
+     transition: 0.2s ease;
+}
+
+.selector a:hover {
+    opacity: 1;
 }
 
 /* central .music*/
-/* central .music .category */
-/* contenitore delle varie categorie di dischi */
+/* contenitore di tutte le categorie di dischi */
 .music {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    padding: 10px;
 }
 
-.music h2 {
-    margin: 20px 20px 0;
-    font-size: 25px;
+/* central .music .category */
+/* contenitore di ogni categorie di dischi */
+/* titolo categoria */
+.music .category-title {
+    margin-left: 20px;
+    font-size: 35px;
     text-transform: capitalize;
 }
 
+/* row di ogni categoria (wrap) */
 .music .category {
-    flex: 1;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
-    margin: 30px 0;
+    max-width: 1200px;
+    margin: 30px auto 50px;
     color: white;
 }
 
-.responsive_img {
+/* singolo disco in ogni categoria */
+.category .disc {
+    flex-basis: calc(100% / var(--lg-row-item-number) - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* overlay disco */
+.category .disc-img {
+    position: relative;
+     transition: 0.7s ease;
+}
+
+/* .category .disc-img:hover~.disc-title */
+
+.category .disc-img:hover .overlay
+{
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+
+.category .disc-img .overlay {
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(38, 38, 38, 0.65);
+    transition: 0.5s ease;
+
+}
+
+.category .disc-img .overlay .icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+
+
+}
+
+
+
+/* responsive image come Bootstrap larghezza del genitore */
+.category .disc .responsive-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+
+}
+
+/* border radius disc image and overlay image */
+.category .disc:nth-child(2n+1) .responsive-img,
+.category .disc:nth-child(2n+1) .overlay {
     border-radius: 50%;
 }
 
-.disc-title {
+
+.category .disc .disc-title {
+    opacity: 0.5;
+    margin-top: 10px;
     text-align: center;
 }
 
-.category .disc {
-    /* height: 200px; */
-    flex: 0 0 calc(100% / 6 - 20px);
-    /* flex: 0 0 200px; */
-    margin: 10px;
-    background-color: green;
-    /* border: 1px solid white; */
+.category .disc .disc-title h4{
+    font-weight: 400;
+    font-size: 12px;
 }
 
-.category .disc:nth-child(3n) {
-    border-radius: 50%;
+.category .disc .disc-title h5{
+    font-weight: 200;
+    font-size: 10px;
 }
+
 
 /* media query */
 @media screen and (max-width: 992px) {
+
+
+
     .category .disc {
-        /* height: 200px; */
-        flex: 0 0 calc(100% / 4 - 20px);
-        /* flex: 0 0 200px; */
+        flex: 0 0 calc(100% / var(--md-row-item-number) - 20px);
         margin: 10px;
-        background-color: lightgreen;
-        /* border: 1px solid white; */
     }
-
-
 }
 
 @media screen and (max-width: 768px) {
+
+
+
+    .category .disc {
+        flex: 0 0 calc(100% / var(--sm-row-item-number) - 20px);
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
     aside {
         width: var(--aside-small-wd);
         background-color: lightgrey;
@@ -153,27 +242,11 @@ section.central {
     }
 
     section.central {
-        background-color: black;
+
         margin-left: var(--aside-small-wd);
     }
 
-    /* .music */
-    .music {
-        padding: 15px;
-    }
-
-    .category .disc {
-        /* height: 200px; */
-        flex: 0 0 calc(100% / 2 - 20px);
-        /* flex: 0 0 200px; */
-        margin: 10px;
-        background-color: lightblue;
-        /* border: 1px solid white; */
-    }
-
-    /* .category .disc {
-        height: 160px;
-        flex: 0 0 160px;
-        margin: 5px;
+    /* .music {
+        padding: 5px;
     } */
 }
