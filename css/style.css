@@ -11,19 +11,14 @@
 }
 
 /* some var */
-
 :root {
-    --aside-big-wd: 140px; /*aside big width*/
-    --aside-small-wd: 50px; /*aside small width*/
+    --aside-big-wd: 140px;
+    /*aside big width*/
+    --aside-small-wd: 50px;
+    /*aside small width*/
 }
 
-
-/* end var declarations */
-
 /* section define */
-
-
-
 aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
@@ -31,7 +26,6 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
-
 }
 
 header {
@@ -44,8 +38,6 @@ header {
     f
 }
 
-
-
 section.player {
     height: 70px;
     width: 100vw;
@@ -55,20 +47,20 @@ section.player {
 }
 
 section.central {
-    height: 100vh;
-    margin-top: 70px;
+    /* height: 100vh; */
+    margin: 70px 0;
     margin-left: var(--aside-big-wd);
     color: white;
     background-color: black;
 }
+
+/* central .selector */
 
 .selector {
     max-width: 90%;
     margin: 0 auto;
     padding: 10px;
     background-color: blue;
-    
-
 }
 
 .selector ul {
@@ -76,7 +68,6 @@ section.central {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
 
 .selector a {
@@ -84,20 +75,50 @@ section.central {
     color: white;
     text-decoration: none;
     margin: 5px 10px;
+}
 
+/* central .music*/
+/* central .music .category */
+
+.music {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.music .category {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px 0;
+    color: white;
+}
+
+.category .disc {
+
+    height: 160px;
+    flex: 0 0 160px;
+    margin: 10px;
+    background-color: green;
+    border: 1px solid white;
+    border-radius: 50%;
 }
 
 
 
-/* end big section */
+
+
+
+
+
+
 
 
 /* media query */
 @media screen and (max-width: 768px) {
-
     aside {
         width: var(--aside-small-wd);
-
         background-color: lightgrey;
     }
 
@@ -105,14 +126,12 @@ section.central {
         height: 70px;
         width: calc(100vw - var(--aside-small-wd));
         background-color: darkred;
-        left: var(--aside-small-wd);;
+        left: var(--aside-small-wd);
+        ;
     }
-
-
 
     section.central {
         background-color: black;
         margin-left: var(--aside-small-wd);
     }
-
 }
