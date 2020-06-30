@@ -13,7 +13,7 @@
 /* some var */
 
 :root {
-    --aside-big-wd: 100px; /*aside big width*/
+    --aside-big-wd: 140px; /*aside big width*/
     --aside-small-wd: 50px; /*aside small width*/
 }
 
@@ -22,14 +22,7 @@
 
 /* section define */
 
-header {
-    height: 70px;
-    width: calc(100vw - var(--aside-big-wd));
-    background-color: red;
-    position: fixed;
-    top: 0;
-    right: 0;
-}
+
 
 aside {
     height: calc(100vh - 70px);
@@ -38,7 +31,20 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
+
 }
+
+header {
+    height: 70px;
+    width: calc(100vw - var(--aside-big-wd));
+    background-color: red;
+    position: fixed;
+    top: 0;
+    left: var(--aside-big-wd);
+    f
+}
+
+
 
 section.player {
     height: 70px;
@@ -59,20 +65,22 @@ section.central {
 
 /* media query */
 @media screen and (max-width: 768px) {
-    header {
-        height: 70px;
-        width: calc(100vw - var(--aside-small-wd));
-        background-color: darkred;
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
 
     aside {
         width: var(--aside-small-wd);
         width: 50px;
         background-color: lightgrey;
     }
+
+    header {
+        height: 70px;
+        width: calc(100vw - var(--aside-small-wd));
+        background-color: darkred;
+
+        left: var(--aside-small-wd);;
+    }
+
+
 
     section.central {
         background-color: black;
