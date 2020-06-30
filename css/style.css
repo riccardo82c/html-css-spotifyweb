@@ -20,6 +20,8 @@
 
 /* end var declarations */
 
+/* section define */
+
 header {
     height: 70px;
     width: calc(100vw - var(--aside-big-wd));
@@ -43,8 +45,15 @@ section.player {
     width: 100vw;
     background-color: red;
     position: fixed;
-
     bottom: 0;
+}
+
+section.central {
+    height: 100vh;
+    margin-top: 70px;
+    margin-left: var(--aside-big-wd);
+    color: white;
+    background-color: black;
 }
 
 
@@ -63,6 +72,11 @@ section.player {
         width: var(--aside-small-wd);
         width: 50px;
         background-color: lightgrey;
+    }
+
+    section.central {
+        background-color: black;
+        margin-left: var(--aside-small-wd);
     }
 
 }
