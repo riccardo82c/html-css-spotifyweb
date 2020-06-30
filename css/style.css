@@ -9,3 +9,60 @@
     clear: both;
     display: table;
 }
+
+/* some var */
+
+:root {
+    --aside-big-wd: 100px; /*aside big width*/
+    --aside-small-wd: 50px; /*aside small width*/
+}
+
+
+/* end var declarations */
+
+header {
+    height: 70px;
+    width: calc(100vw - var(--aside-big-wd));
+    background-color: red;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+aside {
+    height: calc(100vh - 70px);
+    width: var(--aside-big-wd);
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+section.player {
+    height: 70px;
+    width: 100vw;
+    background-color: red;
+    position: fixed;
+
+    bottom: 0;
+}
+
+
+/* media query */
+@media screen and (max-width: 768px) {
+    header {
+        height: 70px;
+        width: calc(100vw - var(--aside-small-wd));
+        background-color: darkred;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+
+    aside {
+        width: var(--aside-small-wd);
+        width: 50px;
+        background-color: lightgrey;
+    }
+
+}
