@@ -62,13 +62,42 @@ section.central {
     background-color: black;
 }
 
+.selector {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: blue;
+    
+
+}
+
+.selector ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.selector a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+
+}
+
+
+
+/* end big section */
+
 
 /* media query */
 @media screen and (max-width: 768px) {
 
     aside {
         width: var(--aside-small-wd);
-        width: 50px;
+
         background-color: lightgrey;
     }
 
@@ -76,7 +105,6 @@ section.central {
         height: 70px;
         width: calc(100vw - var(--aside-small-wd));
         background-color: darkred;
-
         left: var(--aside-small-wd);;
     }
 
