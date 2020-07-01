@@ -102,9 +102,12 @@ aside .menu li i {
 .menu a.active {
     color: white;
     font-size: 14px;
+
 }
 
 /* aside .playlist flex-items*/
+
+
 .playlist h3 {
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -136,7 +139,7 @@ aside .menu li i {
 }
 
 .playlist .playlist-btn span {
-    float: right;
+    float: left;
     padding: 4px 0 10px 10px;
 }
 
@@ -362,9 +365,14 @@ section.central {
 
     /*end aside xs */
 
+    .central .selector{
+        max-width: 100%;
+        background-color: #0f1219;
+    }
+
     .central .selector ul  {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .central .selector a {
@@ -374,6 +382,14 @@ section.central {
 
     .central .selector ul li:first-child a {
         margin-top: 0px;
+    }
+
+    .central .music {
+        padding: 0;
+    }
+
+    .central .music .category-title {
+        text-align: center;
     }
 
 
