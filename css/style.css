@@ -14,7 +14,7 @@
 /* some var */
 :root {
     /* larghezza aside big screen */
-    --aside-big-wd: 200px;
+    --aside-big-wd: 180px;
     /* larghezza aside small screen */
     --aside-small-wd: 50px;
     /* altezza headerr */
@@ -28,6 +28,7 @@
     /* colore grigio font base */
     --font-color-grey: #999999;
 }
+
 /* general */
 body {
     background-color: #141922;
@@ -64,6 +65,11 @@ aside {
     color: white;
 }
 
+/* hidden small aside */
+.aside-small {
+    display: none;
+}
+
 /* aside .brand flex-items*/
 aside .brand {
     height: var(--header-height);
@@ -80,12 +86,11 @@ aside .brand i {
 }
 
 /* aside .menu flex-items*/
-
 aside .menu {
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
 }
 
-aside .menu li{
+aside .menu li {
     padding: 5px 0;
 }
 
@@ -114,40 +119,32 @@ aside .menu li i {
     cursor: pointer;
 }
 
-.playlist .playlist-btn{
+.playlist .playlist-btn {
     color: var(--font-color-grey);
     font-size: 14px;
     text-transform: capitalize;
     width: 100%;
 }
 
-.playlist .playlist-btn:hover{
+.playlist .playlist-btn:hover {
     color: white;
 }
 
-.playlist .playlist-btn i{
+.playlist .playlist-btn i {
     font-size: 25px;
     float: left;
 }
 
-.playlist .playlist-btn span{
+.playlist .playlist-btn span {
     float: right;
-
     padding: 4px 0 10px 10px;
 }
 
 .playlist ul li {
     padding: 5px 0;
     font-size: 14px;
+    text-transform: capitalize;
 }
-
-
-
-
-
-
-
-
 
 /* .menu ul {
     display: flex;
@@ -162,9 +159,8 @@ header {
     top: 0;
     left: var(--aside-big-wd);
     z-index: 1000;
+    color: red;
 }
-
-
 
 /************************/
 /* sezione bassa */
@@ -192,7 +188,6 @@ section.central {
     max-width: 80%;
     margin: 0px auto 20px;
     padding: 20px 10px;
-
     /* background-color: blue; */
 }
 
@@ -205,11 +200,10 @@ section.central {
 
 .selector a {
     display: block;
-
     text-decoration: none;
     padding: 5px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 12px;
     transition: 0.2s ease;
 }
 
@@ -221,7 +215,6 @@ section.central {
 /* .selector a:hover {
     color: white;
 } */
-
 /* central .music*/
 /* contenitore di tutte le categorie di dischi */
 .music {
@@ -335,9 +328,44 @@ section.central {
 
 /* extra small */
 @media screen and (max-width: 576px) {
+
+    /* aside on extra small screen */
     aside {
         width: var(--aside-small-wd);
-        /* background-color: lightgrey; */
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .fab.fa-spotify.brand-icon{
+        margin-left: 20px;
+    }
+
+    .aside-small i{
+        margin: 10px 0;
+        font-size: 25px;
+    }
+
+    .aside-small li {
+        text-align: center;
+    }
+
+    .aside-big {
+        display: none;
+    }
+
+    .aside-small {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*end aside xs */
+
+    .selector ul  {
+        flex-direction: column;
+        align-items: center;
+
     }
 
     header {
