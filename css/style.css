@@ -27,6 +27,10 @@
     --sm-row-item-number: 2;
 }
 
+body {
+    background-color: #141922;
+}
+
 
 
 
@@ -36,18 +40,41 @@
 aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
-    background-color: grey;
+    background-color: #000000;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
 }
+/* aside .brand */
+aside .brand {
+    height: 70px;
+    display: flex;
+    align-items: center;
+
+}
+
+aside .brand img {
+    height: 50px;
+    filter: invert(1);
+}
+
+
+
+/* aside .menu */
+/* .menu ul {
+    display: flex;
+} */
 /************************/
 /* sezione alta */
 header {
     height: 70px;
     width: calc(100vw - var(--aside-big-wd));
-    background-color: red;
+    background-color: #080b12;
     position: fixed;
     top: 0;
     left: var(--aside-big-wd);
@@ -58,7 +85,7 @@ header {
 section.player {
     height: 70px;
     width: 100vw;
-    background-color: red;
+    background-color: #282828;
     position: fixed;
     bottom: 0;
     z-index: 1000;
@@ -66,16 +93,18 @@ section.player {
 /************************/
 /* sezione centrale */
 section.central {
+
     margin: 70px 0;
     margin-left: var(--aside-big-wd);
     color: white;
-    background-color: #333;
+    /* background-color: #141922; */
+
 
 }
 /************************/
 /* central .selector */
 .selector {
-    max-width: 60%;
+    max-width: 80%;
     margin: 0px auto 20px;
     padding: 20px 10px;
     /* background-color: blue; */
@@ -90,17 +119,26 @@ section.central {
 
 .selector a {
     display: block;
-    color: white;
+    color: #999999;
     text-decoration: none;
     padding: 5px;
     text-transform: capitalize;
     font-size: 14px;
-    opacity: 0.5;
+
+
      transition: 0.2s ease;
 }
 
+.selector a.active {
+    color: white;
+    border-bottom: 2px solid green;
+
+
+}
+
 .selector a:hover {
-    opacity: 1;
+    color: white;
+
 }
 
 /* central .music*/
@@ -159,7 +197,8 @@ section.central {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background-color: rgba(38, 38, 38, 0.65);
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid #62898a;
     transition: 0.5s ease;
 
 }
@@ -210,6 +249,7 @@ section.central {
 
 
 /* media query */
+/* medium */
 @media screen and (max-width: 992px) {
 
 
@@ -219,7 +259,7 @@ section.central {
         margin: 10px;
     }
 }
-
+/* small */
 @media screen and (max-width: 768px) {
 
 
@@ -230,16 +270,17 @@ section.central {
     }
 }
 
+/* extra small */
 @media screen and (max-width: 576px) {
     aside {
         width: var(--aside-small-wd);
-        background-color: lightgrey;
+        /* background-color: lightgrey; */
     }
 
     header {
         height: 70px;
         width: calc(100vw - var(--aside-small-wd));
-        background-color: darkred;
+        /* background-color: darkred; */
         left: var(--aside-small-wd);
         ;
     }
