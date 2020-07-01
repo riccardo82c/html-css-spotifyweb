@@ -2,9 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
     font-family: 'Montserrat', sans-serif;
-
 }
 
 .clearfix::after {
@@ -16,24 +14,37 @@
 /* some var */
 :root {
     /* larghezza aside big screen */
-    --aside-big-wd: 140px;
+    --aside-big-wd: 200px;
     /* larghezza aside small screen */
     --aside-small-wd: 50px;
+    /* altezza headerr */
+    --header-height: 70px;
     /* numero dischi riga large screen */
     --lg-row-item-number: 6;
     /* numero dischi riga medium screen */
     --md-row-item-number: 4;
     /* numero dischi riga small screen */
     --sm-row-item-number: 2;
+    /* colore grigio font base */
+    --font-color-grey: #999999;
 }
-
+/* general */
 body {
     background-color: #141922;
 }
 
+a {
+    color: var(--font-color-grey);
+    text-decoration: none;
+}
 
+a:hover {
+    color: white;
+}
 
-
+ul {
+    list-style: none;
+}
 
 /* section define */
 /* sezione di sinistra */
@@ -45,34 +56,106 @@ aside {
     top: 0;
     left: 0;
     z-index: 1000;
+    padding: 10px 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: column;
     color: white;
 }
-/* aside .brand */
+
+/* aside .brand flex-items*/
 aside .brand {
-    height: 70px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
-
+    margin-left: -10px;
+    font-size: 20px;
 }
 
-aside .brand img {
-    height: 50px;
-    filter: invert(1);
+aside .brand i {
+    font-size: 40px;
+    padding-right: 10px;
+    /* filter: invert(1); */
+}
+
+/* aside .menu flex-items*/
+
+aside .menu {
+    margin: 20px 0;
+}
+
+aside .menu li{
+    padding: 5px 0;
+}
+
+aside .menu li i {
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.menu a.active {
+    color: white;
+    font-size: 14px;
+}
+
+/* aside .playlist flex-items*/
+.playlist h3 {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.playlist .playlist-btn {
+    width: 40px;
+    height: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.playlist .playlist-btn{
+    color: var(--font-color-grey);
+    font-size: 14px;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.playlist .playlist-btn:hover{
+    color: white;
+}
+
+.playlist .playlist-btn i{
+    font-size: 25px;
+    float: left;
+}
+
+.playlist .playlist-btn span{
+    float: right;
+
+    padding: 4px 0 10px 10px;
+}
+
+.playlist ul li {
+    padding: 5px 0;
+    font-size: 14px;
 }
 
 
 
-/* aside .menu */
+
+
+
+
+
+
 /* .menu ul {
     display: flex;
 } */
 /************************/
 /* sezione alta */
 header {
-    height: 70px;
+    height: var(--header-height);
     width: calc(100vw - var(--aside-big-wd));
     background-color: #080b12;
     position: fixed;
@@ -80,33 +163,36 @@ header {
     left: var(--aside-big-wd);
     z-index: 1000;
 }
+
+
+
 /************************/
 /* sezione bassa */
 section.player {
-    height: 70px;
+    height: var(--header-height);
     width: 100vw;
     background-color: #282828;
     position: fixed;
     bottom: 0;
     z-index: 1000;
 }
+
 /************************/
 /* sezione centrale */
 section.central {
-
     margin: 70px 0;
     margin-left: var(--aside-big-wd);
     color: white;
     /* background-color: #141922; */
-
-
 }
+
 /************************/
 /* central .selector */
 .selector {
     max-width: 80%;
     margin: 0px auto 20px;
     padding: 20px 10px;
+
     /* background-color: blue; */
 }
 
@@ -119,27 +205,22 @@ section.central {
 
 .selector a {
     display: block;
-    color: #999999;
+
     text-decoration: none;
     padding: 5px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     font-size: 14px;
-
-
-     transition: 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .selector a.active {
     color: white;
     border-bottom: 2px solid green;
-
-
 }
 
-.selector a:hover {
+/* .selector a:hover {
     color: white;
-
-}
+} */
 
 /* central .music*/
 /* contenitore di tutte le categorie di dischi */
@@ -175,21 +256,18 @@ section.central {
     flex-direction: column;
     justify-content: center;
 }
+
 /* overlay disco */
 .category .disc-img {
     position: relative;
-     transition: 0.7s ease;
+    transition: 0.7s ease;
 }
 
 /* .category .disc-img:hover~.disc-title */
-
-.category .disc-img:hover .overlay
-{
+.category .disc-img:hover .overlay {
     opacity: 1;
     cursor: pointer;
 }
-
-
 
 .category .disc-img .overlay {
     position: absolute;
@@ -200,28 +278,20 @@ section.central {
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid #62898a;
     transition: 0.5s ease;
-
 }
 
-.category .disc-img .overlay .icon{
+.category .disc-img .overlay .icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 40px;
-
-
 }
-
-
 
 /* responsive image come Bootstrap larghezza del genitore */
 .category .disc .responsive-img {
     width: 100%;
     height: 100%;
-
-
-
 }
 
 /* border radius disc image and overlay image */
@@ -230,40 +300,33 @@ section.central {
     border-radius: 50%;
 }
 
-
 .category .disc .disc-title {
     opacity: 0.5;
     margin-top: 10px;
     text-align: center;
 }
 
-.category .disc .disc-title h4{
+.category .disc .disc-title h4 {
     font-weight: 400;
     font-size: 12px;
 }
 
-.category .disc .disc-title h5{
+.category .disc .disc-title h5 {
     font-weight: 200;
     font-size: 10px;
 }
 
-
 /* media query */
 /* medium */
 @media screen and (max-width: 992px) {
-
-
-
     .category .disc {
         flex: 0 0 calc(100% / var(--md-row-item-number) - 20px);
         margin: 10px;
     }
 }
+
 /* small */
 @media screen and (max-width: 768px) {
-
-
-
     .category .disc {
         flex: 0 0 calc(100% / var(--sm-row-item-number) - 20px);
         margin: 10px;
@@ -286,7 +349,6 @@ section.central {
     }
 
     section.central {
-
         margin-left: var(--aside-small-wd);
     }
 
