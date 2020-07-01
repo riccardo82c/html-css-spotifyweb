@@ -27,11 +27,54 @@
     --sm-row-item-number: 2;
     /* colore grigio font base */
     --font-color-grey: #999999;
+    /* background body */
+    --body-bg: #141922;
+    --link-hover: white;
+    --bar-background: white;
+    --header-background: #080b12;
+    --aside-background: #000000;
+    --brand-color: white;
+    --link-active: white;
+    --playlist-menu: white;
+    --playlist-menu-btn-hover: white;
+    --player-background: #282828;
+    --player-song-title: white;
+    --player-control: white;
+    --player-control-right: white;
+    --category-color: white;
+    --category-selector-active:white;
+    --category-background-xs: #0f1219;
+    --overlay-disc: rgba(0, 0, 0, 0.4);
+    --overlay-disc-border: #62898a;
+}
+
+/* var globali per la light mode */
+[data-theme="dark"] {
+    --font-color-grey: #6a6a6a;
+    --body-bg: white;
+    --link-hover: rgb(5, 172, 34);
+    --bar-background: rgb(46, 46, 46);
+    --header-background: #477dfa;
+    --aside-background: #c5f7f0;
+    --brand-color: rgb(5, 172, 34);
+    --link-active: rgb(5, 172, 34);
+    --playlist-menu: rgb(5, 172, 34);
+    --playlist-menu-btn-hover: rgb(5, 172, 34);
+    --player-background: rgb(107, 157, 214);
+    --player-song-title: black;
+    --player-control: black;
+    --player-control-right: black;
+    --category-color: black;
+    --category-selector-active: rgb(5, 172, 34);
+    --category-background-xs: #f2d3aa;
+    --overlay-disc: rgba(255, 255, 255, 0.4);
+    --overlay-disc-border: #052526;
+
 }
 
 /* stili generali */
 body {
-    background-color: #141922;
+    background-color: var(--body-bg);
 }
 
 a {
@@ -40,7 +83,7 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: var(--link-hover);
 }
 
 ul {
@@ -49,8 +92,7 @@ ul {
 
 .player-bar {
     height: 2px;
-
-    background-color: white;
+    background-color: var(--bar-background);
     border-radius: 1px;
 }
 
@@ -63,7 +105,7 @@ header {
     height: var(--header-height);
     width: calc(100% - var(--aside-big-wd));
     padding: 10px 20px;
-    background-color: #080b12;
+    background-color: var(--header-background);
     position: fixed;
     top: 0;
     left: var(--aside-big-wd);
@@ -73,7 +115,7 @@ header {
     align-items: center;
 }
 
-header .toggle-btn {
+header .toggle {
     padding: 10px 20px;
     background-color: transparent;
     color: white;
@@ -81,17 +123,16 @@ header .toggle-btn {
     border-radius: 20px;
 }
 
-header .toggle-btn:active {
+header .toggle:active {
     background-color: white;
     color: #080b12;
-
 }
 
 /* ASIDE section */
 aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
-    background-color: #000000;
+    background-color: var(--aside-background);
     font-size: 12px;
     position: fixed;
     top: 0;
@@ -128,8 +169,9 @@ aside .brand {
     align-items: center;
     margin-left: -10px;
     font-size: 20px;
-    color: white;
+    color: var(--brand-color);
 }
+
 /* icona spotify */
 aside .brand i {
     font-size: 40px;
@@ -145,14 +187,16 @@ aside .menu {
 aside .menu li {
     padding: 5px 0;
 }
+
 /* icone menu laterale */
 aside i {
     padding-right: 10px;
     font-size: 16px;
 }
+
 /* link attivo sezione laterale */
 .menu a.active {
-    color: white;
+    color: var(--link-active);
     /* font-size: 12px; */
 }
 
@@ -160,13 +204,15 @@ aside i {
 .playlist {
     flex: 1 0 auto;
 }
+
 /* titolo sotteseione playlist */
 .playlist h3 {
     text-transform: uppercase;
     margin-bottom: 15px;
     font-size: 18px;
-    color: white;
+    color: var(--playlist-menu);
 }
+
 /* botton add playlist */
 .playlist .playlist-btn {
     width: 100%;
@@ -178,20 +224,24 @@ aside i {
     border: none;
     cursor: pointer;
 }
+
 /* hover button add playlist */
 .playlist .playlist-btn:hover {
-    color: white;
+    color: var(--playlist-menu-btn-hover);
 }
+
 /* icona nel button */
 .playlist .playlist-btn i {
     font-size: 25px;
     float: left;
 }
+
 /* testo del button */
 .playlist .playlist-btn span {
     float: left;
     padding: 4px 0 10px 0;
 }
+
 /* list item della sezione playlist */
 .playlist ul li {
     padding: 5px 0;
@@ -215,23 +265,21 @@ hr {
 .account .profile {
     font-size: 16px;
 }
+
 /* profile icona */
 .account .profile i {
     padding-right: 10px;
     font-size: 30px;
 }
 
-
-
 /************************/
 /* PLAYER section */
 section.player {
     height: var(--header-height);
     width: 100%;
-    background-color: #282828;
+    background-color: var(--player-background);
     position: fixed;
     bottom: 0;
-
     z-index: 1000;
     display: flex;
     justify-content: space-around;
@@ -239,7 +287,6 @@ section.player {
 
 .player div[class$="-play"] {
     padding: 10px 5px;
-
 }
 
 /* left-play sottosezione */
@@ -261,28 +308,27 @@ section.player {
 }
 
 .player .left-play .selected-middle {
-    color: white;
+    color: var(--player-song-title);
 }
 
 .player .left-play .selected-middle h5 {
     font-size: 10px;
 }
+
 .player .left-play .selected-middle p {
     font-size: 8px;
 }
 
-.player .left-play .selected-right a{
+.player .left-play .selected-right a {
     margin: 0 5px;
 }
-
-
 
 /* middle-play sottosezione */
 .player .middle-play {
     flex: 0 1 35%;
     height: 100%;
     /* background-color: rgb(184, 118, 208); */
-    color: white;
+    color: var(--player-control);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,24 +349,12 @@ section.player {
 }
 
 .player .middle-play .player-time .player-bar {
-
     width: 80%;
-
 }
 
 .player .middle-play .player-time span {
     font-size: 10px;
-
 }
-
-
-
-
-
-
-
-
-
 
 /* right-play sottosezione */
 .player .right-play {
@@ -330,25 +364,23 @@ section.player {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    color: white;
+    color: var(--player-control-right);
 }
 
-.player .right-play span{
+.player .right-play span {
     margin: 0 5px;
 }
 
 .player .right-play .player-bar {
     width: 60%;
-
 }
-
 
 /************************/
 /* CENTRAL section */
 section.central {
     margin: 70px 0;
     margin-left: var(--aside-big-wd);
-    color: white;
+    color: var(--category-color);
     /* background-color: #141922; */
 }
 
@@ -378,7 +410,7 @@ section.central {
 }
 
 .selector a.active {
-    color: white;
+    color: var(--category-selector-active);
     border-bottom: 2px solid green;
 }
 
@@ -405,7 +437,7 @@ section.central {
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 30px auto 50px;
-    color: white;
+    /* color: white; */
 }
 
 /* singolo disco in ogni categoria */
@@ -435,8 +467,8 @@ section.central {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid #62898a;
+    background-color: var(--overlay-disc);
+    border: 1px solid var(--overlay-disc-border);
     transition: 0.5s ease;
 }
 
@@ -487,7 +519,6 @@ section.central {
 
     .player .middle-play .player-time .player-bar {
         width: 60%;
-
     }
 }
 
@@ -537,7 +568,7 @@ section.central {
     /*end aside xs */
     .central .selector {
         max-width: 100%;
-        background-color: #0f1219;
+        background-color: var(--category-background-xs);
     }
 
     .central .selector ul {
