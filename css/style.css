@@ -53,6 +53,7 @@ aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
     background-color: #000000;
+    font-size: 12px;
     position: fixed;
     top: 0;
     left: 0;
@@ -60,15 +61,28 @@ aside {
     padding: 10px 20px;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-direction: column;
-    color: white;
+
 }
+
+.aside-big{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    color: var(--font-color-grey);
+
+}
+
+
 
 /* hidden small aside */
 .aside-small {
     display: none;
 }
+/*******************  */
 
 /* aside .brand flex-items*/
 aside .brand {
@@ -77,11 +91,13 @@ aside .brand {
     align-items: center;
     margin-left: -10px;
     font-size: 20px;
+    color: white;
 }
 
 aside .brand i {
     font-size: 40px;
     padding-right: 10px;
+
     /* filter: invert(1); */
 }
 
@@ -94,24 +110,27 @@ aside .menu li {
     padding: 5px 0;
 }
 
-aside .menu li i {
+aside i {
     padding-right: 10px;
     font-size: 16px;
 }
 
 .menu a.active {
     color: white;
-    font-size: 14px;
+    /* font-size: 12px; */
 
 }
 
 /* aside .playlist flex-items*/
-
+.playlist {
+    flex: 1 0 auto;
+}
 
 .playlist h3 {
     text-transform: uppercase;
     margin-bottom: 15px;
     font-size: 18px;
+    color: white;
 }
 
 .playlist .playlist-btn {
@@ -140,20 +159,37 @@ aside .menu li i {
 
 .playlist .playlist-btn span {
     float: left;
-    padding: 4px 0 10px 10px;
+    padding: 4px 0 10px 0;
 }
 
 .playlist ul li {
     padding: 5px 0;
-    font-size: 14px;
+    /* font-size: 12px; */
     text-transform: capitalize;
 }
 
-/* .menu ul {
-    display: flex;
-} */
+/* aside .account flex-items*/
+.account .install i {
+    padding:0 14px 0 8px;
+
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.account .profile {
+    font-size: 16px;
+}
+
+.account .profile i {
+    padding-right: 10px;
+    font-size: 30px;
+}
+
+
 /************************/
-/* sezione alta */
+/* sezione header */
 header {
     height: var(--header-height);
     width: calc(100vw - var(--aside-big-wd));
@@ -345,7 +381,8 @@ section.central {
     }
 
     .aside-small i{
-        margin: 10px 0;
+        margin: 15px 0;
+        padding: 0;
         font-size: 25px;
     }
 
