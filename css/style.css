@@ -11,7 +11,7 @@
     display: table;
 }
 
-/* some var */
+/* variabili globali var */
 :root {
     /* larghezza aside big screen */
     --aside-big-wd: 180px;
@@ -29,7 +29,7 @@
     --font-color-grey: #999999;
 }
 
-/* general */
+/* stili generali */
 body {
     background-color: #141922;
 }
@@ -47,8 +47,10 @@ ul {
     list-style: none;
 }
 
-/* section define */
-/* sezione di sinistra */
+/* ********************* */
+/* DEFINIZIONE VARIE SEZIONI */
+/* ********************* */
+/* ASIDE section */
 aside {
     height: calc(100vh - 70px);
     width: var(--aside-big-wd);
@@ -63,27 +65,25 @@ aside {
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-
 }
 
-.aside-big{
+/* visible big aside */
+.aside-big {
     height: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
     color: var(--font-color-grey);
-
 }
-
-
 
 /* hidden small aside */
 .aside-small {
     display: none;
 }
-/*******************  */
 
+/*******************  */
+/* ********************* */
 /* aside .brand flex-items*/
 aside .brand {
     height: var(--header-height);
@@ -93,12 +93,10 @@ aside .brand {
     font-size: 20px;
     color: white;
 }
-
+/* icona spotify */
 aside .brand i {
     font-size: 40px;
     padding-right: 10px;
-
-    /* filter: invert(1); */
 }
 
 /* aside .menu flex-items*/
@@ -106,62 +104,58 @@ aside .menu {
     margin: 10px 0 20px 0;
 }
 
+/* list item menu laterale */
 aside .menu li {
     padding: 5px 0;
 }
-
+/* icone menu laterale */
 aside i {
     padding-right: 10px;
     font-size: 16px;
 }
-
+/* link attivo sezione laterale */
 .menu a.active {
     color: white;
     /* font-size: 12px; */
-
 }
 
 /* aside .playlist flex-items*/
 .playlist {
     flex: 1 0 auto;
 }
-
+/* titolo sotteseione playlist */
 .playlist h3 {
     text-transform: uppercase;
     margin-bottom: 15px;
     font-size: 18px;
     color: white;
 }
-
+/* botton add playlist */
 .playlist .playlist-btn {
-    width: 40px;
+    width: 100%;
     height: 25px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.playlist .playlist-btn {
-    color: var(--font-color-grey);
     font-size: 14px;
     text-transform: capitalize;
-    width: 100%;
+    color: var(--font-color-grey);
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-
+/* hover button add playlist */
 .playlist .playlist-btn:hover {
     color: white;
 }
-
+/* icona nel button */
 .playlist .playlist-btn i {
     font-size: 25px;
     float: left;
 }
-
+/* testo del button */
 .playlist .playlist-btn span {
     float: left;
     padding: 4px 0 10px 0;
 }
-
+/* list item della sezione playlist */
 .playlist ul li {
     padding: 5px 0;
     /* font-size: 12px; */
@@ -169,27 +163,29 @@ aside i {
 }
 
 /* aside .account flex-items*/
+/* sezione bassa dell'aside (account) */
+/* account top, install*/
 .account .install i {
-    padding:0 14px 0 8px;
-
+    padding: 0 14px 0 8px;
 }
 
 hr {
     margin: 10px 0;
 }
 
+/* account bottom, profile*/
+/* profile testo */
 .account .profile {
     font-size: 16px;
 }
-
+/* profile icona */
 .account .profile i {
     padding-right: 10px;
     font-size: 30px;
 }
 
-
 /************************/
-/* sezione header */
+/* HEADER section */
 header {
     height: var(--header-height);
     width: calc(100vw - var(--aside-big-wd));
@@ -202,7 +198,7 @@ header {
 }
 
 /************************/
-/* sezione bassa */
+/* PLAYER section */
 section.player {
     height: var(--header-height);
     width: 100vw;
@@ -213,7 +209,7 @@ section.player {
 }
 
 /************************/
-/* sezione centrale */
+/* CENTRAL section */
 section.central {
     margin: 70px 0;
     margin-left: var(--aside-big-wd);
@@ -221,8 +217,8 @@ section.central {
     /* background-color: #141922; */
 }
 
-/************************/
 /* central .selector */
+/* menu in alto alla sezione central */
 .selector {
     max-width: 80%;
     margin: 0px auto 20px;
@@ -251,9 +247,6 @@ section.central {
     border-bottom: 2px solid green;
 }
 
-/* .selector a:hover {
-    color: white;
-} */
 /* central .music*/
 /* contenitore di tutte le categorie di dischi */
 .music {
@@ -348,6 +341,7 @@ section.central {
     font-size: 10px;
 }
 
+/* player section*/
 /* media query */
 /* medium */
 @media screen and (max-width: 992px) {
@@ -376,11 +370,11 @@ section.central {
         padding-right: 0;
     }
 
-    .fab.fa-spotify.brand-icon{
+    .fab.fa-spotify.brand-icon {
         margin-left: 20px;
     }
 
-    .aside-small i{
+    .aside-small i {
         margin: 15px 0;
         padding: 0;
         font-size: 25px;
@@ -401,13 +395,12 @@ section.central {
     }
 
     /*end aside xs */
-
-    .central .selector{
+    .central .selector {
         max-width: 100%;
         background-color: #0f1219;
     }
 
-    .central .selector ul  {
+    .central .selector ul {
         flex-direction: column;
         align-items: center;
     }
@@ -428,8 +421,6 @@ section.central {
     .central .music .category-title {
         text-align: center;
     }
-
-
 
     header {
         height: 70px;
