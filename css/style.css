@@ -57,6 +57,36 @@ ul {
 /* ********************* */
 /* DEFINIZIONE VARIE SEZIONI */
 /* ********************* */
+/************************/
+/* HEADER section */
+header {
+    height: var(--header-height);
+    width: calc(100% - var(--aside-big-wd));
+    padding: 10px 20px;
+    background-color: #080b12;
+    position: fixed;
+    top: 0;
+    left: var(--aside-big-wd);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .toggle-btn {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+header .toggle-btn:active {
+    background-color: white;
+    color: #080b12;
+
+}
+
 /* ASIDE section */
 aside {
     height: calc(100vh - 70px);
@@ -191,25 +221,14 @@ hr {
     font-size: 30px;
 }
 
-/************************/
-/* HEADER section */
-header {
-    height: var(--header-height);
-    width: calc(100vw - var(--aside-big-wd));
-    background-color: #080b12;
-    position: fixed;
-    top: 0;
-    left: var(--aside-big-wd);
-    z-index: 1000;
-    color: red;
-}
+
 
 /************************/
 /* PLAYER section */
 section.player {
     height: var(--header-height);
     width: 100%;
-    background-color: #080b12;
+    background-color: #282828;
     position: fixed;
     bottom: 0;
 
