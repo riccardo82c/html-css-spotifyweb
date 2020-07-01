@@ -47,6 +47,13 @@ ul {
     list-style: none;
 }
 
+.player-bar {
+    height: 2px;
+
+    background-color: white;
+    border-radius: 1px;
+}
+
 /* ********************* */
 /* DEFINIZIONE VARIE SEZIONI */
 /* ********************* */
@@ -201,12 +208,121 @@ header {
 /* PLAYER section */
 section.player {
     height: var(--header-height);
-    width: 100vw;
-    background-color: #282828;
+    width: 100%;
+    background-color: #080b12;
     position: fixed;
     bottom: 0;
+
     z-index: 1000;
+    display: flex;
+    justify-content: space-around;
 }
+
+.player div[class$="-play"] {
+    padding: 10px 5px;
+
+}
+
+/* left-play sottosezione */
+.player .left-play {
+    flex: 0 1 25%;
+    height: 100%;
+    /* background-color: rgb(132, 184, 131); */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.player .left-play div {
+    margin: 0 5px;
+}
+
+.player .left-play .selected-left img {
+    height: 40px;
+}
+
+.player .left-play .selected-middle {
+    color: white;
+}
+
+.player .left-play .selected-middle h5 {
+    font-size: 10px;
+}
+.player .left-play .selected-middle p {
+    font-size: 8px;
+}
+
+.player .left-play .selected-right a{
+    margin: 0 5px;
+}
+
+
+
+/* middle-play sottosezione */
+.player .middle-play {
+    flex: 0 1 35%;
+    height: 100%;
+    /* background-color: rgb(184, 118, 208); */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.player .middle-play .player-control-btn {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.player .middle-play .player-time {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player .middle-play .player-time .player-bar {
+
+    width: 80%;
+
+}
+
+.player .middle-play .player-time span {
+    font-size: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* right-play sottosezione */
+.player .right-play {
+    flex: 0 1 35%;
+    height: 100%;
+    /* background-color: rgb(198, 74, 99); */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+.player .right-play span{
+    margin: 0 5px;
+}
+
+.player .right-play .player-bar {
+    width: 60%;
+
+}
+
 
 /************************/
 /* CENTRAL section */
@@ -348,6 +464,11 @@ section.central {
     .category .disc {
         flex: 0 0 calc(100% / var(--md-row-item-number) - 20px);
         margin: 10px;
+    }
+
+    .player .middle-play .player-time .player-bar {
+        width: 60%;
+
     }
 }
 
