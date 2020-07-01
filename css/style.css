@@ -362,11 +362,21 @@ section.central {
 
     /*end aside xs */
 
-    .selector ul  {
+    .central .selector ul  {
         flex-direction: column;
-        align-items: center;
-
+        align-items: flex-start;
     }
+
+    .central .selector a {
+        font-size: 18px;
+        margin-top: 12px;
+    }
+
+    .central .selector ul li:first-child a {
+        margin-top: 0px;
+    }
+
+
 
     header {
         height: 70px;
