@@ -105,8 +105,9 @@ ul {
 /* HEADER section */
 header {
     height: var(--header-height);
-    width: calc(100% - var(--aside-big-wd));
-    padding: 10px 20px;
+
+    width: calc(100vw - var(--aside-big-wd));
+    padding: 10px 25px 10px 10px;
     background-color: var(--header-background);
     position: fixed;
     top: 0;
@@ -122,12 +123,41 @@ header button {
     background-color: transparent;
     color: white;
     border: 1px solid white;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
-header button:active {
+header button.toggle:active {
     background-color: white;
     color: #080b12;
+}
+/* click effect on burger */
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+/* end click effect on burger */
+
+/* button per il dropdown nascoscto su schermi grandi */
+.dropbtn {
+    display: none;
+    padding: 5px 10px;
+    transform: scale(.7);
+    border-width: 0;
 }
 
 /* ASIDE section */
@@ -289,10 +319,7 @@ section.central {
 
 /* central .selector */
 /* menu in alto alla sezione central */
-/* button per il dropdown nascoscto su schermi grandi */
-.dropbtn {
-    display: none;
-}
+
 
 .selector {
     max-width: 80%;
@@ -566,8 +593,9 @@ section.player {
     aside {
         width: var(--aside-small-wd);
         display: block;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
+        /* padding-left: 0;
+        padding-right: 0; */
     }
 
     .fab.fa-spotify.brand-icon {
