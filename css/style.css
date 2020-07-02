@@ -159,6 +159,11 @@ header button.toggle:active {
     transform: scale(.7);
     border-width: 0;
 }
+/* toggle-icon nascosta on big screen */
+.toggle-icon {
+    display: none;
+}
+
 
 /* ASIDE section */
 aside {
@@ -484,12 +489,21 @@ section.player {
     color: var(--player-song-title);
 }
 
+.player .left-play .selected-middle:hover {
+    color: var(--link-hover);
+}
+
 .player .left-play .selected-middle h5 {
     font-size: 10px;
 }
 
 .player .left-play .selected-middle p {
     font-size: 8px;
+}
+
+.player .left-play .selected-right {
+    margin: 0;
+
 }
 
 .player .left-play .selected-right a {
@@ -583,9 +597,27 @@ section.player {
         justify-content: space-between;
     }
 
-    /* button per il dropdown nascoscto su schermi grandi */
+    /* button per il dropdown visible su schermi xs */
     .dropbtn {
         display: block;
+    }
+    /* icona toggle visible su schermi piccoli */
+    .toggle-icon {
+        font-size: 25px;
+        display: inline-block;
+    }
+
+    .toggle-txt {
+        display: none;
+    }
+
+    button.toggle {
+        border: 0;
+    }
+
+    header button.toggle:active {
+        background-color: transparent;
+
     }
 
 
