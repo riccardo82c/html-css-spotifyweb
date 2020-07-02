@@ -14,6 +14,7 @@
 <body>
 
     <header>
+        <button id="myBtn" class="dropbtn">Menu</button>
         <button class="toggle" onclick="toggleTheme()">Toggle Light / Dark</button>
 
 
@@ -57,7 +58,10 @@
     </aside>
 
     <section class="central">
-        <div class="selector">
+
+
+
+        <div class="selector dropdown-content" id="myDropdown">
             <ul>
                 <li><a href="" class="active">in evidenza</a></li>
                 <li><a href="">podcast</a></li>
@@ -185,7 +189,9 @@
                 </div>
                 <div class="disc">
                     <div class="disc-img">
-                        <img class="responsive-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.discogs.com%2FmSxmdCA4vSNMbPQEMbcVKKlawXU%3D%2Ffit-in%2F300x300%2Ffilters%3Astrip_icc()%3Aformat(jpeg)%3Amode_rgb()%3Aquality(90)%2Fdiscogs-images%2FR-3034174-1312655954.jpeg.jpg&f=1&nofb=1" alt="">
+                        <img class="responsive-img"
+                            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.discogs.com%2FmSxmdCA4vSNMbPQEMbcVKKlawXU%3D%2Ffit-in%2F300x300%2Ffilters%3Astrip_icc()%3Aformat(jpeg)%3Amode_rgb()%3Aquality(90)%2Fdiscogs-images%2FR-3034174-1312655954.jpeg.jpg&f=1&nofb=1"
+                            alt="">
                         <div class="overlay">
                             <div class="icon"><i class="fas fa-play-circle"></i></div>
                         </div>
@@ -284,7 +290,7 @@
         </div>
     </section>
 
-<script src="js/script.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
 </body>
 
 </html>

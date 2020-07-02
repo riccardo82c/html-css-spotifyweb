@@ -117,7 +117,7 @@ header {
     align-items: center;
 }
 
-header .toggle {
+header button {
     padding: 10px 20px;
     background-color: transparent;
     color: white;
@@ -125,7 +125,7 @@ header .toggle {
     border-radius: 20px;
 }
 
-header .toggle:active {
+header button:active {
     background-color: white;
     color: #080b12;
 }
@@ -143,7 +143,7 @@ aside {
     padding: 10px 20px;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
@@ -289,6 +289,11 @@ section.central {
 
 /* central .selector */
 /* menu in alto alla sezione central */
+/* button per il dropdown nascoscto su schermi grandi */
+.dropbtn {
+    display: none;
+}
+
 .selector {
     max-width: 80%;
     margin: 0px auto 20px;
@@ -546,6 +551,17 @@ section.player {
 /* extra small */
 @media screen and (max-width: 576px) {
 
+    /* change header flex alignment */
+    header {
+        justify-content: space-between;
+    }
+
+    /* button per il dropdown nascoscto su schermi grandi */
+    .dropbtn {
+        display: block;
+    }
+
+
     /* aside on extra small screen */
     aside {
         width: var(--aside-small-wd);
@@ -579,9 +595,19 @@ section.player {
     }
 
     /*end aside xs */
+
+
     .central .selector {
         max-width: 100%;
         background-color: var(--category-background-xs);
+    }
+
+    .dropdown-content {
+        display: none;
+    }
+
+    .show {
+        display:block;
     }
 
     .central .selector ul {
@@ -599,7 +625,8 @@ section.player {
     }
 
     .central .music {
-        padding: 0;
+        padding: 20px 0 0 0;
+        
     }
 
     .central .music .category-title {
