@@ -84,7 +84,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus, a:active {
     color: var(--link-hover);
 }
 
@@ -338,7 +338,7 @@ section.central {
 
 
 .selector {
-    max-width: 80%;
+    max-width: 70%;
     margin: 0px auto 20px;
     padding: 20px 10px;
     /* background-color: blue; */
