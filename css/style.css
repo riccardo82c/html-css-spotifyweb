@@ -46,7 +46,7 @@
     --category-selector-active-border: green;
     --category-background-xs: #0f1219;
     --overlay-disc: rgba(0, 0, 0, 0.4);
-    --overlay-disc-border: #62898a;
+    /* --overlay-disc-border: #62898a; */
 }
 
 /* var globali per la light mode */
@@ -69,8 +69,8 @@
     --category-selector-active: #e7745b;
     --category-selector-active-border: #458091;
     --category-background-xs: #ffe9d6;
-    --overlay-disc: rgba(255, 255, 255, 0.3);
-    --overlay-disc-border: #052526;
+    --overlay-disc: rgba(255, 255, 255, 0.4);
+    /* --overlay-disc-border: #052526; */
 
 }
 
@@ -409,7 +409,7 @@ section.central {
     height: 100%;
     opacity: 0;
     background-color: var(--overlay-disc);
-    border: 1px solid var(--overlay-disc-border);
+    /* border: 1px solid var(--overlay-disc-border); */
     transition: 0.5s ease;
 }
 
