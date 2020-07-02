@@ -140,15 +140,15 @@ header button.toggle:active {
 }
 
 .change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
 }
 
 .change .bar2 {opacity: 0;}
 
 .change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
+  -webkit-transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-9px, -8px);
 }
 /* end click effect on burger */
 
@@ -156,7 +156,7 @@ header button.toggle:active {
 .dropbtn {
     display: none;
     padding: 5px 10px;
-    transform: scale(.7);
+    /* transform: scale(.7); */
     border-width: 0;
 }
 /* toggle-icon nascosta on big screen */
@@ -207,6 +207,12 @@ aside .brand {
     margin-left: -10px;
     font-size: 20px;
     color: var(--brand-color);
+}
+
+aside .brand:hover i,
+aside .brand:hover h3{
+    color: #1bd35e;
+    cursor: pointer;
 }
 
 /* icona spotify */
@@ -603,7 +609,7 @@ section.player {
     }
     /* icona toggle visible su schermi piccoli */
     .toggle-icon {
-        font-size: 25px;
+        font-size: 30px;
         display: inline-block;
     }
 
