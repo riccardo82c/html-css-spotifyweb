@@ -38,9 +38,9 @@
     --playlist-menu: white;
     --playlist-menu-btn-hover: white;
     --player-background: #282828;
-    --player-song-title: white;
-    --player-control: white;
-    --player-control-right: white;
+    --player-song-title: #999999;
+    --player-control: #999999;
+    --player-control-right: #999999;
     --category-color: white;
     --category-selector-active:white;
     --category-selector-active-border: green;
@@ -626,7 +626,7 @@ section.player {
 
     .central .music {
         padding: 20px 0 0 0;
-        
+
     }
 
     .central .music .category-title {
