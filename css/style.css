@@ -245,8 +245,13 @@ aside i {
 
 /* aside .playlist flex-items*/
 .playlist {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    width: 100%;
+
 }
+
+
 
 /* titolo sotteseione playlist */
 .playlist h3 {
@@ -364,7 +369,6 @@ section.central {
 /* contenitore di tutte le categorie di dischi */
 .music {
     padding: 10px;
-
 }
 
 /* central .music .category */
@@ -382,6 +386,7 @@ section.central {
 .music .category {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     max-width: 1200px;
     margin: 30px auto 50px;
     /* color: white; */
@@ -558,7 +563,6 @@ section.player {
 .player .right-play {
     flex: 0 1 35%;
     height: 100%;
-    /* background-color: rgb(198, 74, 99); */
     display: flex;
     justify-content: flex-end;
     align-items: center;
